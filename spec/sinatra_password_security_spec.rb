@@ -1,3 +1,4 @@
+require 'pry'
 describe "App" do 
 
   describe "GET '/'" do 
@@ -60,6 +61,7 @@ describe "App" do
       fill_in "password", :with => "test"
       
       click_button "Log In"
+      binding.pry
       expect(page.current_path).to eq('/success')
       expect(page.status_code).to eq(200)
     end
